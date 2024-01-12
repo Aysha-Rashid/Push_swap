@@ -6,7 +6,7 @@
 /*   By: ayal-ras <ayal-ras@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 17:17:02 by ayal-ras          #+#    #+#             */
-/*   Updated: 2024/01/12 14:21:43 by ayal-ras         ###   ########.fr       */
+/*   Updated: 2024/01/12 17:49:37 by ayal-ras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	sort_3(t_data *a)
 	if (a->stack[2] < a->stack[1] && a->stack[1] > a->stack[0])
 		rev_rotate(a, 'a');
 	if (a->stack[2] > a->stack[1])
-		swap(a, 'a');
+		swap(a, 'a');   
 	// printf("%d ", a->stack[0]);
 	// printf("%d ", a->stack[1]);
 	// printf("%d ", a->stack[2]);
@@ -88,18 +88,25 @@ void	sort_5(t_data *a, t_data *b)
 	// printf("%d ", b->stack[2]);
 	// printf("%d ", a->stack[3]);
 	// printf("%d ", a->stack[4]);
-	sort_in_b(b);
+	if (b->stack[0] > b->stack[1])
+		swap(b, 'b');
+	while (b->len > 0)
+	{
+		push(b, a, 'a');
+		// b->len--;
+	}
+	// sort_in_b(b);
 	// back_to_a(a);
 }
 
-void	sort_in_b(t_data *b)
-{
-	(void)b;
-	// printf("%d ", b->stack[0]);
-	// printf("%d ", b->stack[1]);
-	// printf("%d ", b->stack[0]);
-	// printf("%d ", b->stack[1]);
-	// printf("%d ", b->stack[2]);
-	// printf("%d", b->stack[0]);
-	// printf("%d", b->stack[0]);
-}
+// void	sort_in_b(t_data *b)
+// {
+// 	(void)b;
+// 	// printf("%d ", b->stack[0]);
+// 	// printf("%d ", b->stack[1]);
+// 	// printf("%d ", b->stack[0]);
+// 	// printf("%d ", b->stack[1]);
+// 	// printf("%d ", b->stack[2]);
+// 	// printf("%d", b->stack[0]);
+// 	// printf("%d", b->stack[0]);
+// }
