@@ -6,7 +6,7 @@
 /*   By: ayal-ras <ayal-ras@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 11:15:45 by ayal-ras          #+#    #+#             */
-/*   Updated: 2024/01/11 16:27:12 by ayal-ras         ###   ########.fr       */
+/*   Updated: 2024/01/14 14:08:40 by ayal-ras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,9 +86,9 @@ int	fill_stack(char **argv, t_data *a, int count_numbers)
 				return (free_array(split_num));
 			a->stack[count_numbers-- - 1] = (int)num;
 		}
+		free_array(split_num);
 	}
 	a->first = a->stack[a->len - 1];
-	free_array(split_num);
 	return (1);
 }
 

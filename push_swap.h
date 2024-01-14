@@ -6,7 +6,7 @@
 /*   By: ayal-ras <ayal-ras@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:29:27 by ayal-ras          #+#    #+#             */
-/*   Updated: 2024/01/12 13:34:51 by ayal-ras         ###   ########.fr       */
+/*   Updated: 2024/01/14 18:28:23 by ayal-ras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,18 @@ void	sorting(t_data *a, t_data *b);
 int		sorted(t_data *a);
 void	sort_3(t_data *a);
 void	sort_5(t_data *a, t_data *b);
-void	sort_in_b(t_data *b);
+void	sort_b_then_sort_in_a(t_data *a, t_data *b);
+int		find_best_move(t_data a, t_data b);
+int		moves_pos(t_data a, int num);
+void	rotate_both(t_data *a, int a_top, t_data *b, int b_top);
+void	set_rot(int *st_rot, int st_dir, int st_top, int st_len);
+void	rotate_st(t_data *st, int st_dir, char st_name);
+void	rotate_a_b(t_data *a, int a_dir, t_data *b, int b_dir);
+void	min_top(t_data *st, char st_name);
 // error handling
-void	ft_error_message(void);
+void	ft_error_message(t_data *a, t_data *b);
 int		free_array(char **str);
-int		valid_arguments(char **argv, t_data a);
+int		valid_arguments(char **argv);
 void	free_both(int *stack_a, int *stack_b);
 // others
 int		ft_count_number(char **argv);
@@ -45,5 +52,7 @@ int		init_stacks(char **argv, t_data *a, t_data *b);
 int		fill_stack(char **argv, t_data *a, int count_numbers);
 int		ft_duplicate(t_data a);
 int		position(t_data a, int current);
+int		max(t_data num);
+int		min(t_data num);
 // void	bubbleSort(int arr[], int len);
 // int	ft_duplicate(char *str, char c, int len);

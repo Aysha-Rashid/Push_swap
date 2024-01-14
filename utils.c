@@ -6,19 +6,20 @@
 /*   By: ayal-ras <ayal-ras@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 21:01:34 by ayal-ras          #+#    #+#             */
-/*   Updated: 2024/01/10 21:12:39 by ayal-ras         ###   ########.fr       */
+/*   Updated: 2024/01/14 14:17:12 by ayal-ras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_error_message(void)
+void	ft_error_message(t_data *a, t_data *b)
 {
+	free_both(a->stack, b->stack);
 	ft_putstr_fd("Error\n", 2);
-	exit(0);
+	exit(1);
 }
 
-int	valid_arguments(char **argv, t_data a)
+int	valid_arguments(char **argv)
 {
 	int	i;
 	int	j;
@@ -33,7 +34,7 @@ int	valid_arguments(char **argv, t_data a)
 			{
 				if (argv[i][j] == '-')
 					j++;
-				if (!ft_isdigit(argv[i][j]) || ft_duplicate(a))
+				if (!ft_isdigit(argv[i][j]))
 					return (0);
 			}
 			j++;

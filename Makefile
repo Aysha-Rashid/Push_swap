@@ -13,7 +13,7 @@ ft_printf_lib= ft_printf/libftprintf.a
 libft_lib= libft/libft.a
 CC = cc
 
-CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g
+CFLAGS = -Wall -Wextra -Werror
 
 $(NAME): $(OBJ)
 	cd ft_printf && make all

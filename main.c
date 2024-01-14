@@ -6,7 +6,7 @@
 /*   By: ayal-ras <ayal-ras@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:27:40 by ayal-ras          #+#    #+#             */
-/*   Updated: 2024/01/11 16:28:00 by ayal-ras         ###   ########.fr       */
+/*   Updated: 2024/01/14 14:17:09 by ayal-ras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,11 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		exit(0);
 	else if (!init_stacks(argv, &a, &b))
-		ft_error_message();
-	else if (!valid_arguments(argv, a))
-		ft_error_message();
+		ft_error_message(&a, &b);
+	else if (!valid_arguments(argv))
+		ft_error_message(&a, &b);
+	else if (ft_duplicate(a))
+		ft_error_message(&a, &b);
 	else
 		sorting(&a, &b);
 	free_both(a.stack, b.stack);
