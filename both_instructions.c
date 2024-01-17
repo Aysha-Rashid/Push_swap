@@ -6,7 +6,7 @@
 /*   By: ayal-ras <ayal-ras@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 16:08:44 by ayal-ras          #+#    #+#             */
-/*   Updated: 2024/01/14 18:38:08 by ayal-ras         ###   ########.fr       */
+/*   Updated: 2024/01/17 17:42:29 by ayal-ras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	both_rev_rotate(t_data *a, t_data *b)
 {
 	rev_rotate(a, 0);
 	rev_rotate(b, 0);
-	ft_printf("rr\n");
+	ft_printf("rrr\n");
 }
 
 void	both_rotate(t_data *a, t_data *b)
@@ -33,39 +33,6 @@ void	both_swap(t_data *a, t_data *b)
 	ft_printf("ss\n");
 }
 
-void	rotate_a_b(t_data *a, int a_dir, t_data *b, int b_dir)
-{
-	if (a_dir && b_dir)
-		both_rev_rotate(a, b);
-	else if (!a_dir && !b_dir)
-		both_rotate(a, b);
-	else if (a_dir && !b_dir)
-	{
-		rev_rotate(a, 'a');
-		rotate(b, 'b');
-	}
-	else if (!a_dir && b_dir)
-	{
-		rotate(a, 'a');
-		rev_rotate(b,'b');
-	}
-}
-
-void	rotate_st(t_data *st, int st_dir, char st_name)
-{
-	if (st_dir)
-		rev_rotate(st, st_name);
-	else
-		rotate(st, st_name);
-}
-
-void	set_rot(int *st_rot, int st_dir, int st_top, int st_len)
-{
-	*st_rot = st_top;
-	if (!st_dir)
-		*st_rot = st_len - st_top;
-}
-
 void	rotate_both(t_data *a, int a_top, t_data *b, int b_top)
 {
 	int	a_dir;
@@ -73,11 +40,10 @@ void	rotate_both(t_data *a, int a_top, t_data *b, int b_top)
 	int	b_dir;
 	int	b_rot;
 
-	a_dir = (a_top / (double)a->len) < 0.5; // 1 means it's in the bottom end of the stack
-	// ft_printf(" %d\n", a_dir);
-	b_dir = (b_top / (double)b->len) < 0.5; // 0 means it's in the upper end of the stack
-	set_rot(&a_rot, a_dir, a_top, a->len); // 0
-	set_rot(&b_rot, b_dir, b_top, b->len); // 1
+	a_dir = (a_top / (double)a->len) < 0.5;
+	b_dir = (b_top / (double)b->len) < 0.5;
+	set_rot(&a_rot, a_dir, a_top, a->len);
+	set_rot(&b_rot, b_dir, b_top, b->len);
 	while (a_rot || b_rot)
 	{
 		if (a_rot && b_rot)

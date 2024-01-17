@@ -6,14 +6,14 @@
 /*   By: ayal-ras <ayal-ras@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 17:37:05 by ayal-ras          #+#    #+#             */
-/*   Updated: 2023/12/24 19:48:15 by ayal-ras         ###   ########.fr       */
+/*   Updated: 2024/01/17 15:57:51 by ayal-ras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // s: This is a pointer to the object to be searched for.
 // c: This is a character to search for.
 // n: Max number of the byte which is examined to search c.
-//  memchr library function finds the first occurrence of c in the initial
+//  memchr library function finds the  occurrence of c in the initial
 // n characters of the object pointed to by s.
 #include "libft.h"
 

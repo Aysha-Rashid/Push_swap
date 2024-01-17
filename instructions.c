@@ -6,7 +6,7 @@
 /*   By: ayal-ras <ayal-ras@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 16:06:01 by ayal-ras          #+#    #+#             */
-/*   Updated: 2024/01/13 13:29:49 by ayal-ras         ###   ########.fr       */
+/*   Updated: 2024/01/17 17:45:50 by ayal-ras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,18 @@ void	rotate(t_data *a, int letter)
 	int	first;
 	int	i;
 
-	i = a->len - 1;
-	first = a->stack[a->len - 1];
-	while (i > 0)
+	if (a->len - 1)
 	{
-		a->stack[i] = a->stack[i - 1];
-		i--;
+		i = a->len - 1;
+		first = a->stack[a->len - 1];
+		while (i > 0)
+		{
+			a->stack[i] = a->stack[i - 1];
+			i--;
+		}
+		a->stack[0] = first;
 	}
-	a->stack[0] = first;
+	a->first = a->stack[a->len - 1];
 	if (letter)
 		ft_printf("r%c\n", letter);
 }
@@ -47,9 +51,11 @@ void	rotate(t_data *a, int letter)
 void	push(t_data *a, t_data	*b, int letter)
 {
 	b->stack[b->len] = a->stack[a->len - 1];
-	// printf("%d ", b->len);
 	b->len++;
 	a->len--;
+	if (a->len)
+		a->first = a->stack[a->len - 1];
 	b->first = b->stack[b->len - 1];
-	ft_printf("p%c\n", letter);
+	if (letter)
+		ft_printf("p%c\n", letter);
 }

@@ -3,9 +3,10 @@ NAME= push_swap
 SRC=main.c \
 	init.c \
 	utils.c \
+	utils_2.c \
 	sorting.c \
+	rotations.c \
 	instructions.c \
-	rev_instructions.c \
 	both_instructions.c \
 
 OBJ= $(SRC:.c=.o)

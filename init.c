@@ -6,7 +6,7 @@
 /*   By: ayal-ras <ayal-ras@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 11:15:45 by ayal-ras          #+#    #+#             */
-/*   Updated: 2024/01/14 14:08:40 by ayal-ras         ###   ########.fr       */
+/*   Updated: 2024/01/17 17:22:22 by ayal-ras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,19 +92,43 @@ int	fill_stack(char **argv, t_data *a, int count_numbers)
 	return (1);
 }
 
-int	free_array(char **str)
+int	count_kept_in_a(t_data a, int num)
 {
+	int	median;
 	int	i;
+	int	count;
 
-	i = 0;
-	while (str[i])
-		free(str[i++]);
-	free(str);
-	return (0);
+	count = 0;
+	median = position(a, num);
+	i = median;
+	while (i-- > 0)
+	{
+		if (a.stack[i] > num)
+		{
+			num = a.stack[i];
+			count++;
+		}
+	}
+	return (count);
 }
 
-void	free_both(int *stack_a, int *stack_b)
+void	sort_using_median(t_data *a, t_data	*b)
 {
-	free(stack_a);
-	free(stack_b);
+	int	median;
+	int	last_kept;
+
+	median = a->first;
+	last_kept = median;
+	rotate(a, 'a');
+	while (a->first != median)
+	{
+		if (a->first > last_kept)
+		{
+			last_kept = a->first;
+			rotate(a, 'a');
+		}
+		else
+			push(a, b, 'b');
+	}
+	sort_b_then_sort_in_a(a, b);
 }
