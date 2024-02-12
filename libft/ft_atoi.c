@@ -6,13 +6,13 @@
 /*   By: ayal-ras <ayal-ras@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 15:54:46 by ayal-ras          #+#    #+#             */
-/*   Updated: 2024/01/08 19:05:40 by ayal-ras         ###   ########.fr       */
+/*   Updated: 2024/01/20 13:23:58 by ayal-ras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	overflow(long max, long r, int sign)
+static long	overflow(long max, long r, int sign)
 {
 	if (r >= (max / 10))
 	{

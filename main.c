@@ -6,26 +6,11 @@
 /*   By: ayal-ras <ayal-ras@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:27:40 by ayal-ras          #+#    #+#             */
-/*   Updated: 2024/01/17 13:19:35 by ayal-ras         ###   ########.fr       */
+/*   Updated: 2024/01/19 19:22:15 by ayal-ras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-// sort from smallest to largest
-// instruction must be seperated by \n
-// maximum number of operations tolerated.
-// if no parameters are specified, the program displays nothing and
-// give immediate response
-// in case of error, it should display 'Error\n' 
-// error such as:
-// 1. not integers
-// 2. duplicate integer, argument being bigger than an integer
-
-// to create a stack, we will need to create a linked list
-// we will need doubly linked list (has a reference to the previous node)
-// handling the integers in double or in single; they should be taken
-// as seperate integer
 
 int	main(int argc, char **argv)
 {

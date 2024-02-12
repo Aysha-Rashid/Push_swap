@@ -6,7 +6,7 @@
 /*   By: ayal-ras <ayal-ras@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 21:01:34 by ayal-ras          #+#    #+#             */
-/*   Updated: 2024/01/17 13:27:32 by ayal-ras         ###   ########.fr       */
+/*   Updated: 2024/01/19 19:20:26 by ayal-ras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,19 +23,19 @@ int	valid_arguments(char **argv)
 		j = 0;
 		while (argv[i][j])
 		{
-			if (argv[i][j] != ' ')
-			{
-				if (argv[i][j] == '-')
-					j++;
-				if (!ft_isdigit(argv[i][j]))
-					return (0);
-			}
+			if (argv[i][j] == '-' && j == 0)
+				j++;
+			if ((j > 0 && argv[i][j] == '-'))
+				return (0);
+			else if (argv[i][j] != ' ' && !ft_isdigit(argv[i][j]))
+				return (0);
 			j++;
 		}
 		i++;
 	}
 	return (1);
 }
+
 
 int	ft_duplicate(t_data a)
 {

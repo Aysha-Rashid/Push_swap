@@ -6,14 +6,12 @@
 /*   By: ayal-ras <ayal-ras@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:29:27 by ayal-ras          #+#    #+#             */
-/*   Updated: 2024/01/17 17:45:34 by ayal-ras         ###   ########.fr       */
+/*   Updated: 2024/01/18 20:17:18 by ayal-ras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf/ft_printf.h"
 #include "libft/libft.h"
-#include <stdlib.h>
-#include <stdio.h>
 
 typedef struct s_data
 {
