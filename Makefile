@@ -16,7 +16,7 @@ CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
-$(NAME): $(OBJ) $(ft_printf_lib) $(ft_printf_lib)
+$(NAME): $(OBJ)
 	cd ft_printf && make
 	cd libft && make
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME) $(ft_printf_lib) $(libft_lib)
