@@ -6,31 +6,34 @@
 /*   By: ayal-ras <ayal-ras@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 16:08:44 by ayal-ras          #+#    #+#             */
-/*   Updated: 2024/01/17 17:42:29 by ayal-ras         ###   ########.fr       */
+/*   Updated: 2024/06/20 21:21:59 by ayal-ras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	both_rev_rotate(t_data *a, t_data *b)
+void	both_rev_rotate(t_data *a, t_data *b, int letter)
 {
 	rev_rotate(a, 0);
 	rev_rotate(b, 0);
-	ft_printf("rrr\n");
+	if (letter)
+		ft_printf("rrr\n");
 }
 
-void	both_rotate(t_data *a, t_data *b)
+void	both_rotate(t_data *a, t_data *b, int letter)
 {
 	rotate(a, 0);
 	rotate(b, 0);
-	ft_printf("rr\n");
+	if (letter)
+		ft_printf("rr\n");
 }
 
-void	both_swap(t_data *a, t_data *b)
+void	both_swap(t_data *a, t_data *b, int letter)
 {
 	swap(a, 0);
 	swap(b, 0);
-	ft_printf("ss\n");
+	if (letter)
+		ft_printf("ss\n");
 }
 
 void	rotate_both(t_data *a, int a_top, t_data *b, int b_top)

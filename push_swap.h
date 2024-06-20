@@ -6,12 +6,13 @@
 /*   By: ayal-ras <ayal-ras@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:29:27 by ayal-ras          #+#    #+#             */
-/*   Updated: 2024/01/18 20:17:18 by ayal-ras         ###   ########.fr       */
+/*   Updated: 2024/06/20 21:22:42 by ayal-ras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf/ft_printf.h"
 #include "libft/libft.h"
+#include "get_next_line.h"
 
 typedef struct s_data
 {
@@ -25,9 +26,9 @@ void	swap(t_data *a, int letter);
 void	push(t_data *a, t_data	*b, int letter);
 void	rotate(t_data *a, int letter);
 void	rev_rotate(t_data *a, int letter);
-void	both_rotate(t_data *a, t_data *b);
-void	both_rev_rotate(t_data *a, t_data *b);
-void	both_swap(t_data *a, t_data *b);
+void	both_rotate(t_data *a, t_data *b, int letter);
+void	both_rev_rotate(t_data *a, t_data *b, int letter);
+void	both_swap(t_data *a, t_data *b, int letter);
 void	sorting(t_data *a, t_data *b);
 int		sorted(t_data *a);
 void	sort_3(t_data *a);

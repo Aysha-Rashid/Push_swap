@@ -6,7 +6,7 @@
 /*   By: ayal-ras <ayal-ras@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 16:24:08 by ayal-ras          #+#    #+#             */
-/*   Updated: 2024/01/17 17:46:24 by ayal-ras         ###   ########.fr       */
+/*   Updated: 2024/06/20 21:22:57 by ayal-ras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ void	rev_rotate(t_data *a, int letter)
 void	rotate_a_b(t_data *a, int a_dir, t_data *b, int b_dir)
 {
 	if (a_dir && b_dir)
-		both_rev_rotate(a, b);
+		both_rev_rotate(a, b, 1);
 	else if (!a_dir && !b_dir)
-		both_rotate(a, b);
+		both_rotate(a, b, 1);
 	else if (a_dir && !b_dir)
 	{
 		rev_rotate(a, 'a');

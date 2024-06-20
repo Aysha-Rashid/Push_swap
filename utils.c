@@ -6,7 +6,7 @@
 /*   By: ayal-ras <ayal-ras@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 21:01:34 by ayal-ras          #+#    #+#             */
-/*   Updated: 2024/01/19 19:20:26 by ayal-ras         ###   ########.fr       */
+/*   Updated: 2024/06/20 21:48:48 by ayal-ras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ int	valid_arguments(char **argv)
 	}
 	return (1);
 }
-
 
 int	ft_duplicate(t_data a)
 {
